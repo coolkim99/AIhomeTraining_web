@@ -78,6 +78,6 @@
   },
   "main": "index.js",
   "license": "MIT",
-  "proxy": "http://localhost:4000/",
+  "proxy": "https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app/",
   "secure": false
 }
