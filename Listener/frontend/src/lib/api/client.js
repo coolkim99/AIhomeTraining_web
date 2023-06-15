@@ -5,6 +5,7 @@ const client = axios.create({
   headers : {
       "baseURL" : 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app',
       'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   }
 });
 
