@@ -21,11 +21,6 @@ const app = new Koa();
 const cors = require('koa2-cors');
 const router = new Router();
 router.use('/api', api.routes());
-router.options('*', (ctx) => {
-    ctx.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    ctx.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    ctx.status = 200;
-})
 app.use(cors({
     origin: (ctx) =>{
         return '*';
