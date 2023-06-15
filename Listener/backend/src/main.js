@@ -21,8 +21,15 @@ const app = new Koa();
 const cors = require('koa2-cors');
 const router = new Router();
 router.use('/api', api.routes());
+router.options('*', (ctx) => {
+    ctx.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    ctx.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    ctx.status = 200;
+})
 app.use(cors({
-    origin: '*', // 액세스를 허용할 도메인으로 변경
+    origin: (ctx) =>{
+        return '*';
+    },
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   }));
 app.use(bodyParser());
