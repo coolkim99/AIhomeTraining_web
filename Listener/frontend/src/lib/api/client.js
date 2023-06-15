@@ -1,7 +1,16 @@
 import axios from 'axios';
 
-const client = axios.create();
+const client = axios.create({
+  withCredentials: false,
+  headers : {
+      "Content-Type": "application/json",
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+      'withCredentials' : true,
+  }
+});
 
+// client.defaults.baseURL = 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app' 
 /*
   글로벌 설정 예시:
   

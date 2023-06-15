@@ -20,8 +20,13 @@ mongoose
 
 
 const app = new Koa();
+const cors = require('koa2-cors');
 const router = new Router();
 router.use('/api', api.routes());
+app.use(cors({
+    origin: '*', // 액세스를 허용할 도메인으로 변경
+    credentials: true, // 필요한 경우
+  }));
 app.use(bodyParser());
 app.use(jwtMiddleware);
 
