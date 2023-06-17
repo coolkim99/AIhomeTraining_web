@@ -22,14 +22,22 @@ const cors = require('koa2-cors');
 const router = new Router();
 router.use('/api', api.routes());
 app.use(cors({
-    origin: (ctx) =>{
-        return '*';
-    },
-    allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  }));
+  origin: (ctx) => {
+    return '*';
+  },
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+}));
+
+app.use(async (ctx, next) => {
+  // Content-Type 헤더 설정
+  ctx.set('Content-Type', 'application/json');
+
+  // 다음 미들웨어로 제어를 넘김
+  await next();
+});
+
 app.use(bodyParser());
 app.use(jwtMiddleware);
-
 
 app.use(router.routes()).use(router.allowedMethods());
 
