@@ -33,7 +33,7 @@ app.use(jwtMiddleware);
 
 app.use(router.routes()).use(router.allowedMethods());
 
-const port = 5000;
-app.listen(5000, () => {
+const port = PORT;
+app.listen(port, () => {
     console.log("Listening to port" + port);
 });
