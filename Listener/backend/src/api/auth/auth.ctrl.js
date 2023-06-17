@@ -99,7 +99,7 @@ export const check = async ctx => {
     return;
   }
   const userDoc = await User.findByUsername(user.username);
-  //console.log(userDoc);
+  console.log(userDoc);
   ctx.body = userDoc.serialize();
   //ctx.body = userDoc;
 };
