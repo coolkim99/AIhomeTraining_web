@@ -21,7 +21,6 @@
     "chart.js": "^2.9.4",
     "css-loader": "^5.0.2",
     "dotenv": "^8.2.0",
-    "firebase": "^9.22.2",
     "immer": "^8.0.1",
     "jquery": "^3.5.1",
     "ml5": "^0.5.0",
@@ -79,5 +78,6 @@
   },
   "main": "index.js",
   "license": "MIT",
+  "proxy": "https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app/",
   "secure": false
 }

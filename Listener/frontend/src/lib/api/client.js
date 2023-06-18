@@ -9,7 +9,7 @@ const client = axios.create({
   }
 });
 
-client.defaults.baseURL = 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app' 
+// client.defaults.baseURL = 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app' 
 /*
   글로벌 설정 예시:
   
