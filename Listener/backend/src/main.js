@@ -23,7 +23,7 @@ const router = new Router();
 router.use('/api', api.routes());
 app.use(cors({
   origin: (ctx) => {
-    return '*';
+    return "https://wait-b16c8.web.app";
   },
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
 }));
