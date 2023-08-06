@@ -20,7 +20,7 @@ const jwtMiddleware = async (ctx, next) => {
       const token = user.generateToken();
       ctx.cookies.set('access_token', token, {
         maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
-        httpOnly: false,
+        httpOnly: true,
       });
     }
     return next();

@@ -77,11 +77,12 @@ export const login = async ctx => {
       return;
     }
     ctx.body = user.serialize();
-    console.log(ctx.body);
     const token = user.generateToken();
+    console.log(ctx.body);
+    console.log(token);
     ctx.cookies.set('access_token', token, {
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
-      httpOnly: false,
+      httpOnly: true,
     });
   } catch (e) {
     ctx.throw(500, e);
