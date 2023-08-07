@@ -67,12 +67,14 @@ export const login = async ctx => {
     const user = await User.findByUsername(username);
     // 계정이 존재하지 않으면 에러 처리
     if (!user) {
+      console.log("없는 계정")
       ctx.status = 401;
       return;
     }
     const valid = await user.checkPassword(password);
     // 잘못된 비밀번호
     if (!valid) {
+      console.log("잘못된 번호")
       ctx.status = 401;
       return;
     }
@@ -97,6 +99,7 @@ export const check = async ctx => {
   console.log(ctx);
   if (!user) {
     // 로그인중 아님
+    console.log("로그인 중 아님")
     ctx.status = 401; // Unauthorized
     return;
   }
