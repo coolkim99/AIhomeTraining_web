@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const client = axios.create({
-  withCredentials: false,
+  withCredentials: true,
   headers : {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'https://wait-b16c8.web.app',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   }
 });
 
