@@ -22,10 +22,9 @@ const cors = require('koa2-cors');
 const router = new Router();
 router.use('/api', api.routes());
 app.use(cors({
-  origin: (ctx) => {
-    return "https://wait-b16c8.web.app";
-  },
+  origin: 'https://wait-b16c8.web.app',
   allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true, // 이 부분을 추가하여 credentials 허용 설정
 }));
 
 app.use(async (ctx, next) => {
