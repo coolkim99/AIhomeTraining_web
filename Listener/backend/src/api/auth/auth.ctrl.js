@@ -84,7 +84,10 @@ export const login = async ctx => {
     console.log(token);
     ctx.cookies.set('access_token', token, {
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7일
-      httpOnly: true
+      httpOnly: true,
+      sameSite: 'none', // 추가
+      secure: true, // 추가
+      domain: '.web.app' // 클라이언트 도메인 명시
     });
   } catch (e) {
     ctx.throw(500, e);
