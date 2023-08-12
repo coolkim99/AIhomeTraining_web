@@ -2,13 +2,13 @@ import axios from 'axios';
 
 const client = axios.create({
   withCredentials: true,
+  baseURL: 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app',
   headers : {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': 'https://wait-b16c8.web.app',
     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
   }
 });
-client.defaults.baseURL = 'https://port-0-aihometraining-web-lhe2blhyzvaeb.sel4.cloudtype.app' 
 /*
   글로벌 설정 예시:
   
